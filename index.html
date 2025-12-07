@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca Pacheco - Links</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://bancapacheco.com.br/wp-content/uploads/2025/07/Imagens-Categorias-pacheco-2.png" sizes="32x32">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Paleta de cores - LP Queijos Frios */
+            --verde-oliva: #4A5535;
+            --creme-bege: #F7EEDC;
+            --dourado-mostarda: #C6A24A;
+            --branco: #FFFFFF;
+            --marrom-quente: #8A5A3B;
+            
+            /* Variações derivadas */
+            --verde-escuro: #2d3520;
+            --creme-claro: #FFFBF5;
+            --dourado-claro: #D9B76E;
+            --marrom-escuro: #5A3825;
+            
+            /* Transições */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--creme-bege) 0%, #F5EDD8 100%);
+            background-attachment: fixed;
+            color: var(--marrom-quente);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fundo com efeito de gradiente artesanal */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(74, 85, 53, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(198, 162, 74, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(138, 90, 59, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background: 
+                    radial-gradient(circle at 20% 30%, rgba(74, 85, 53, 0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(198, 162, 74, 0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 50% 100%, rgba(138, 90, 59, 0.04) 0%, transparent 50%);
+            }
+            50% {
+                background: 
+                    radial-gradient(circle at 30% 40%, rgba(74, 85, 53, 0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 70% 60%, rgba(198, 162, 74, 0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 90%, rgba(138, 90, 59, 0.05) 0%, transparent 50%);
+            }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Profile Section */
+        .profile {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+            height: 233px;
+        }
+
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            border: 4px solid var(--verde-oliva);
+            overflow: hidden;
+            box-shadow: 
+                0 0 40px rgba(74, 85, 53, 0.25),
+                0 0 80px rgba(198, 162, 74, 0.1),
+                inset 0 0 20px rgba(74, 85, 53, 0.1);
+            animation: zoomIn 0.8s ease-out;
+            position: relative;
+            background: var(--creme-bege);
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(74, 85, 53, 0.1) 0%, transparent 100%);
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--verde-oliva);
+            text-shadow: 0 2px 4px rgba(74, 85, 53, 0.1);
+        }
+
+        .profile p {
+            font-size: 1.1rem;
+            color: var(--marrom-quente);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* Links Section */
+        .links-section {
+            width: 100%;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            height: 314px;
+            max-height: 839px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 18px 24px;
+            margin-bottom: 14px;
+            background: linear-gradient(135deg, var(--verde-oliva) 0%, var(--marrom-quente) 100%);
+            color: var(--creme-bege);
+            text-decoration: none;
+            border-radius: 12px;
+            border: 2px solid var(--verde-oliva);
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 4px 15px rgba(74, 85, 53, 0.2),
+                0 0 30px rgba(198, 162, 74, 0.08);
+        }
+
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(247, 238, 220, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .link-btn:hover::before {
+            left: 100%;
+        }
+
+        .link-btn:hover {
+            background: linear-gradient(135deg, var(--marrom-quente) 0%, var(--verde-oliva) 100%);
+            border-color: var(--dourado-mostarda);
+            box-shadow: 
+                0 8px 30px rgba(74, 85, 53, 0.3),
+                0 0 50px rgba(198, 162, 74, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .link-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .link-btn i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+
+        .link-btn.special {
+            background: linear-gradient(135deg, var(--dourado-mostarda) 0%, var(--dourado-claro) 100%);
+            color: var(--verde-escuro);
+            font-weight: 800;
+            font-size: 1.1rem;
+            border-color: var(--dourado-mostarda);
+            box-shadow: 
+                0 4px 20px rgba(198, 162, 74, 0.3),
+                0 0 40px rgba(198, 162, 74, 0.15);
+        }
+
+        .link-btn.special:hover {
+            background: linear-gradient(135deg, var(--dourado-claro) 0%, var(--dourado-mostarda) 100%);
+            border-color: var(--marrom-quente);
+            box-shadow: 
+                0 8px 40px rgba(198, 162, 74, 0.4),
+                0 0 60px rgba(198, 162, 74, 0.2);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* WhatsApp Button - Verde */
+        .link-btn.whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            font-weight: 700;
+            border-color: #25D366;
+            box-shadow: 
+                0 4px 20px rgba(37, 211, 102, 0.3),
+                0 0 40px rgba(37, 211, 102, 0.15);
+        }
+
+        .link-btn.whatsapp-btn:hover {
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            border-color: #075E54;
+            box-shadow: 
+                0 8px 40px rgba(37, 211, 102, 0.4),
+                0 0 60px rgba(37, 211, 102, 0.2);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            margin-top: 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--branco);
+            border: 2px solid var(--verde-oliva);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--verde-oliva);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(74, 85, 53, 0.1);
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--verde-oliva), var(--dourado-mostarda));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .social-link:hover {
+            border-color: var(--dourado-mostarda);
+            color: var(--branco);
+            box-shadow: 
+                0 0 20px rgba(74, 85, 53, 0.3),
+                inset 0 0 20px rgba(198, 162, 74, 0.1);
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        /* Modal Section - Locations */
+        .location-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--creme-bege);
+            border: 2px solid var(--verde-oliva);
+            color: var(--verde-oliva);
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            box-shadow: 0 4px 12px rgba(74, 85, 53, 0.1);
+        }
+
+        .location-btn:hover {
+            border-color: var(--dourado-mostarda);
+            background: var(--creme-claro);
+            box-shadow: 
+                0 4px 20px rgba(74, 85, 53, 0.15),
+                inset 0 0 15px rgba(198, 162, 74, 0.08);
+            transform: translateX(5px);
+            color: var(--marrom-quente);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(74, 85, 53, 0.7);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--creme-bege);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            border: 3px solid var(--verde-oliva);
+            box-shadow: 
+                0 10px 50px rgba(74, 85, 53, 0.25),
+                0 0 100px rgba(198, 162, 74, 0.1);
+            animation: slideUp 0.4s ease;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--dourado-mostarda);
+        }
+
+        .modal-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--verde-oliva);
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .close {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--marrom-quente);
+            cursor: pointer;
+            transition: var(--transition);
+            line-height: 1;
+        }
+
+        .close:hover {
+            color: var(--dourado-mostarda);
+            transform: rotate(90deg);
+        }
+
+        .location-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: rgba(74, 85, 53, 0.05);
+            border: 2px solid var(--verde-oliva);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .location-item:hover {
+            background: rgba(198, 162, 74, 0.1);
+            border-color: var(--dourado-mostarda);
+            box-shadow: 0 6px 20px rgba(74, 85, 53, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .location-item h3 {
+            color: var(--verde-oliva);
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .location-item p {
+            color: var(--marrom-quente);
+            font-size: 0.95rem;
+            margin: 8px 0;
+        }
+
+        .location-item a {
+            color: var(--dourado-mostarda);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .location-item a:hover {
+            color: var(--marrom-escuro);
+            text-decoration: underline;
+        }
+
+        /* WhatsApp Modal Form */
+        .whatsapp-form {
+            text-align: center;
+        }
+
+        .whatsapp-form p {
+            color: var(--marrom-quente);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-form input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--verde-oliva);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 20px;
+            background: var(--branco);
+            color: var(--verde-oliva);
+            transition: var(--transition);
+        }
+
+        .whatsapp-form input:focus {
+            outline: none;
+            border-color: #25D366;
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+        }
+
+        .whatsapp-form button {
+            width: 100%;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-form button:hover {
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-form button:active {
+            transform: translateY(0);
+        }
+
+        /* Animações */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 480px) {
+            .profile h1 {
+                font-size: 2rem;
+            }
+
+            .profile p {
+                font-size: 1rem;
+            }
+
+            .link-btn {
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
+            .social-links {
+                gap: 14px;
+            }
+
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Scrollbar customizado */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--creme-bege);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--verde-oliva);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dourado-mostarda);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile">
+            <div class="profile-image">
+                <img src="https://bancapacheco.com.br/wp-content/uploads/2025/07/Imagens-Categorias-pacheco-2.png" alt="Banca Pacheco">
+            </div>
+            <h1>Banca Pacheco</h1>
+            <p>Seus melhores produtos em um só lugar 🏆</p>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links-section">
+            <a href="https://bancapacheco.com.br" class="link-btn" target="_blank">
+                <i class="fas fa-globe"></i> Visite Nosso Site
+            </a>
+            <a href="https://lp.bancapacheco.com.br/" class="link-btn" target="_blank">
+                <i class="fas fa-box"></i> Catálogo de Produtos
+            </a>
+            <button class="link-btn" onclick="openLocationsModal()">
+                <i class="fas fa-map-marker-alt"></i> Localização
+            </button>
+            <button class="link-btn whatsapp-btn" onclick="openWhatsAppModal()">
+                <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
+            </button>
+            <a href="https://promos.bancapacheco.com.br/" class="link-btn special" target="_blank">
+                <i class="fas fa-star"></i> Ofertas da Semana
+            </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/bancapacheco/" target="_blank" class="social-link" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@banca.pacheco" target="_blank" class="social-link" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61553835602842" target="_blank" class="social-link" title="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.youtube.com/@bancapacheco" target="_blank" class="social-link" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/pacheco-frios-de-laticínios" target="_blank" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.google.com/search?q=Banca+Pacheco&sca_esv=0cb097f5cf89beeb&sxsrf=AE3TifMKQCIt_JpyOfNb1_r0k_a_wWOTtA%3A1762370102633&ei=NqILaZm1Jtnd5OUPuP_A0Ak&ved=0ahUKEwiZqLif3NuQAxXZLrkGHbg_EJoQ4dUDCBE&uact=5&oq=Banca+Pacheco&gs_lp=Egxnd3Mtd2l6LXNlcnAiDUJhbmNhIFBhY2hlY28yChAjGIAEGCcYigUyEBAuGIAEGBQYhwIYxwEYrwEyCxAuGIAEGMcBGK8BMhAQLhiABBgUGIcCGMcBGK8BMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMgoQABiABBhDGIoFMgUQABiABDIFEAAY7wVIwh5QpAdYux1wA3gBkAEBmAH0AaAB1RCqAQYwLjEzLjG4AQPIAQD4AQGYAhCgAvYPwgIKEAAYsAMY1gQYR8ICEBAjGPAFGIAEGCcYyQIYigXCAhAQLhiABBhDGMcBGIoFGK8BwgIFEC4YgATCAg4QABiABBixAxiKBRiNBsICCxAAGIAEGLEDGIMBwgIIEC4YgAQYsQPCAgoQABiABBgUGIcCwgIQEC4YgAQY0QMYQxjHARiKBcICCBAAGIAEGLEDwgINEAAYgAQYsQMYFBiHAsICBxAAGIAEGArCAgoQABiABBixAxgKwgINEAAYgAQYsQMYgwEYCpgDAIgGAZAGBpIHBDMuMTOgB52xArIHBDAuMTO4B9wPwgcGMi0xMi00yAd8&sclient=gws-wiz-serp" target="_blank" class="social-link" title="Google">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="https://br.pinterest.com/bancapacheco/" target="_blank" class="social-link" title="Pinterest">
+                <i class="fab fa-pinterest"></i>
+            </a>
+        </div>
+
+        <!-- Locations Modal -->
+        <button class="location-btn" onclick="openLocationsModal()" style="display: none;">
+            📍 Conheça Nossas Filiais
+        </button>
+    </div>
+
+    <div id="locationsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📍 Nossas Bancas</h2>
+                <span class="close" onclick="closeLocationsModal()">&times;</span>
+            </div>
+
+            <div class="location-item">
+                <h3>🏪 Banca Pacheco Beiramar</h3>
+                <p>Diret do Campo - Av. Gov. Irineu Bornhausen</p>
+                <p>Agronômica, Florianópolis - SC</p>
+                <a href="https://share.google/8GZgjU2IjSAejg30c" target="_blank">
+                    Ver no Mapa
+                </a>
+            </div>
+
+            <div class="location-item">
+                <h3>🏪 Banca Pacheco Coqueiros</h3>
+                <p>Av. Eng. Max de Souza, 843 - Sala 2</p>
+                <p>Coqueiros, Florianópolis - SC</p>
+                <a href="https://share.google/Pneef0E1J7k8Hhh6a" target="_blank">
+                    Ver no Mapa
+                </a>
+            </div>
+
+            <div class="location-item">
+                <h3>🏪 Banca Pacheco Campinas</h3>
+                <p>Av. Josué di Bernardi, 34</p>
+                <p>Campinas, São José - SC</p>
+                <a href="https://share.google/LijiNChghuOddGVhY" target="_blank">
+                    Ver no Mapa
+                </a>
+            </div>
+
+            <div class="location-item">
+                <h3>🏪 Banca Pacheco Santa Mônica</h3>
+                <p>Av. Me. Benvenuta, 1313</p>
+                <p>Santa Monica, Florianópolis - SC</p>
+                <a href="https://share.google/geEv7aEv4GpnYtF9i" target="_blank">
+                    Ver no Mapa
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Modal -->
+    <div id="whatsappModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>💬 WhatsApp</h2>
+                <span class="close" onclick="closeWhatsAppModal()">&times;</span>
+            </div>
+
+            <div class="whatsapp-form">
+                <p>Olá! Para melhor atendê-lo, por favor informe seu telefone com DDD:</p>
+                <form onsubmit="redirectToWhatsApp(event)">
+                    <input 
+                        type="tel" 
+                        id="phoneInput" 
+                        placeholder="(48) 98411-8953" 
+                        required 
+                        pattern="[0-9\s\(\)\-]+"
+                        maxlength="20"
+                    />
+                    <button type="submit">
+                        <i class="fab fa-whatsapp"></i> Iniciar Conversa
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Locations Modal
+        function openLocationsModal() {
+            document.getElementById('locationsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLocationsModal() {
+            document.getElementById('locationsModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // WhatsApp Modal
+        function openWhatsAppModal() {
+            document.getElementById('whatsappModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Focar no input de telefone
+            setTimeout(() => {
+                document.getElementById('phoneInput').focus();
+            }, 300);
+        }
+
+        function closeWhatsAppModal() {
+            document.getElementById('whatsappModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            // Limpar o campo
+            document.getElementById('phoneInput').value = '';
+        }
+
+        function redirectToWhatsApp(event) {
+            event.preventDefault();
+            
+            const phone = document.getElementById('phoneInput').value;
+            const message = encodeURIComponent('Olá, vim pelos links, gostaria de saber mais da banca.');
+            const whatsappNumber = '5548984118953';
+            
+            // Abrir WhatsApp em nova aba
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            
+            // Fechar modal
+            closeWhatsAppModal();
+        }
+
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const locationsModal = document.getElementById('locationsModal');
+            const whatsappModal = document.getElementById('whatsappModal');
+            
+            if (event.target === locationsModal) {
+                closeLocationsModal();
+            }
+            
+            if (event.target === whatsappModal) {
+                closeWhatsAppModal();
+            }
+        }
+
+        // Suporte a tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLocationsModal();
+                closeWhatsAppModal();
+            }
+        });
+
+        // Máscara de telefone automática
+        document.getElementById('phoneInput').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length <= 11) {
+                if (value.length > 6) {
+                    value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+                } else if (value.length > 2) {
+                    value = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+                } else if (value.length > 0) {
+                    value = value.replace(/^(\d*)/, '($1');
+                }
+            }
+            
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
