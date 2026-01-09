@@ -601,9 +601,6 @@
             <button class="link-btn whatsapp-btn" onclick="openWhatsAppModal()">
                 <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
             </button>
-            <a href="https://promos.bancapacheco.com.br/" class="link-btn special" target="_blank">
-                <i class="fas fa-star"></i> Ofertas da Semana
-            </a>
         </div>
 
         <!-- Social Links -->
@@ -682,33 +679,6 @@
         </div>
     </div>
 
-    <!-- WhatsApp Modal -->
-    <div id="whatsappModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>💬 WhatsApp</h2>
-                <span class="close" onclick="closeWhatsAppModal()">&times;</span>
-            </div>
-
-            <div class="whatsapp-form">
-                <p>Olá! Para melhor atendê-lo, por favor informe seu telefone com DDD:</p>
-                <form onsubmit="redirectToWhatsApp(event)">
-                    <input 
-                        type="tel" 
-                        id="phoneInput" 
-                        placeholder="(48) 98411-8953" 
-                        required 
-                        pattern="[0-9\s\(\)\-]+"
-                        maxlength="20"
-                    />
-                    <button type="submit">
-                        <i class="fab fa-whatsapp"></i> Iniciar Conversa
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <script>
         // Locations Modal
         function openLocationsModal() {
@@ -721,48 +691,19 @@
             document.body.style.overflow = 'auto';
         }
 
-        // WhatsApp Modal
+        // WhatsApp Redirecionamento Direto
         function openWhatsAppModal() {
-            document.getElementById('whatsappModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Focar no input de telefone
-            setTimeout(() => {
-                document.getElementById('phoneInput').focus();
-            }, 300);
-        }
-
-        function closeWhatsAppModal() {
-            document.getElementById('whatsappModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-            // Limpar o campo
-            document.getElementById('phoneInput').value = '';
-        }
-
-        function redirectToWhatsApp(event) {
-            event.preventDefault();
-            
-            const phone = document.getElementById('phoneInput').value;
-            const message = encodeURIComponent('Olá, vim pelos links, gostaria de saber mais da banca.');
-            const whatsappNumber = '5548984118953';
-            
-            // Abrir WhatsApp em nova aba
-            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-            
-            // Fechar modal
-            closeWhatsAppModal();
+            const mensagem = encodeURIComponent('🧀 Olá! Vim pelos links da Bio e gostaria de saber mais sobre a Banca Pacheco! 📱');
+            const urlWhatsApp = `https://api.whatsapp.com/send/?phone=5548984118953&text=${mensagem}`;
+            window.open(urlWhatsApp, '_blank');
         }
 
         // Fechar modal ao clicar fora
         window.onclick = function(event) {
             const locationsModal = document.getElementById('locationsModal');
-            const whatsappModal = document.getElementById('whatsappModal');
             
             if (event.target === locationsModal) {
                 closeLocationsModal();
-            }
-            
-            if (event.target === whatsappModal) {
-                closeWhatsAppModal();
             }
         }
 
@@ -770,25 +711,7 @@
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeLocationsModal();
-                closeWhatsAppModal();
             }
-        });
-
-        // Máscara de telefone automática
-        document.getElementById('phoneInput').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            
-            if (value.length <= 11) {
-                if (value.length > 6) {
-                    value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
-                } else if (value.length > 2) {
-                    value = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
-                } else if (value.length > 0) {
-                    value = value.replace(/^(\d*)/, '($1');
-                }
-            }
-            
-            e.target.value = value;
         });
     </script>
 </body>
